@@ -3,23 +3,23 @@
 
 using namespace std;
 
-// ±ùÏäÀà
+// å†°ç®±ç±»
 class Fridge {
 private:
     string brand;
     bool doorOpen;
 
 public:
-    Fridge(string name = "º£¶û") : brand(name), doorOpen(false) {}
+    Fridge(string name = "æµ·å°”") : brand(name), doorOpen(false) {}
 
     void openDoor() {
         doorOpen = true;
-        cout << "±ùÏäÃÅÒÑ´ò¿ª" << endl;
+        cout << "å†°ç®±é—¨å·²æ‰“å¼€" << endl;
     }
 
     void closeDoor() {
         doorOpen = false;
-        cout << "±ùÏäÃÅÒÑ¹Ø±Õ" << endl;
+        cout << "å†°ç®±é—¨å·²å…³é—­" << endl;
     }
 
     bool isDoorOpen() {
@@ -27,51 +27,51 @@ public:
     }
 
     void showStatus() {
-        cout << "µ±Ç°±ùÏäÃÅ×´Ì¬£º" << (doorOpen ? "¿ªÆô" : "¹Ø±Õ") << endl;
+        cout << "å½“å‰å†°ç®±é—¨çŠ¶æ€ï¼š" << (doorOpen ? "å¼€å¯" : "å…³é—­") << endl;
     }
 };
 
-// ´óÏóÀà
+// å¤§è±¡ç±»
 class Elephant {
 private:
     string name;
 
 public:
-    Elephant(string n = "´óÏó") : name(n) {}
+    Elephant(string n = "å¤§è±¡") : name(n) {}
 
     void enterFridge(Fridge& fridge) {
         if (fridge.isDoorOpen()) {
-            cout << name << "×ß½øÁË±ùÏä" << endl;
+            cout << name << "èµ°è¿›äº†å†°ç®±" << endl;
         } else {
-            cout << "ÃÅÊÇ¹Ø×ÅµÄ£¬" << name << "½ø²»È¥" << endl;
+            cout << "é—¨æ˜¯å…³ç€çš„ï¼Œ" << name << "è¿›ä¸åŽ»" << endl;
         }
     }
 };
 
 int main() {
-    cout << "¡¾´óÏó×°½ø±ùÏä³ÌÐò¡¿" << endl;
+    cout << "ã€å¤§è±¡è£…è¿›å†°ç®±ç¨‹åºã€‘" << endl;
     cout << "----------------------------------" << endl;
 
     Fridge fridge;
     Elephant elephant;
 
-    cout << "µÚÒ»²½£º´ò¿ª±ùÏäÃÅ" << endl;
+    cout << "ç¬¬ä¸€æ­¥ï¼šæ‰“å¼€å†°ç®±é—¨" << endl;
     fridge.openDoor();
     cout << "-> ";
     fridge.showStatus();
     cout << endl;
 
-    cout << "µÚ¶þ²½£º´óÏó×ß½ø±ùÏä" << endl;
+    cout << "ç¬¬äºŒæ­¥ï¼šå¤§è±¡èµ°è¿›å†°ç®±" << endl;
     elephant.enterFridge(fridge);
     cout << endl;
 
-    cout << "µÚÈý²½£º¹Ø±Õ±ùÏäÃÅ" << endl;
+    cout << "ç¬¬ä¸‰æ­¥ï¼šå…³é—­å†°ç®±é—¨" << endl;
     fridge.closeDoor();
     cout << "-> ";
     fridge.showStatus();
     cout << "----------------------------------" << endl;
 
-    cout << "³ÌÐòÖ´ÐÐÍê±Ï¡£" << endl;
+    cout << "ç¨‹åºæ‰§è¡Œå®Œæ¯•ã€‚" << endl;
 
     return 0;
 }
